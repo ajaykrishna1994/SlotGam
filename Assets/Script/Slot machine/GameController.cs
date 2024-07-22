@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour
     private bool spinningInProgress = false;
     [SerializeField]
     private GameObject payline;
+    [SerializeField]
+    private GameObject popupAnim;
     private Animator paylineAnim;
     private List<string> reelResults = new List<string>();
     private bool isrotate;
@@ -159,6 +161,7 @@ public class GameController : MonoBehaviour
             Debug.Log("You win!");
             audioManager.Play("Bigwin");
             payline.SetActive(true);
+            popupAnim.SetActive(true);
             Transform child=payline.transform.GetChild(0);
             paylineAnim = child.GetComponent<Animator>();
             paylineAnim.SetTrigger("PayLinestart");
@@ -173,6 +176,7 @@ public class GameController : MonoBehaviour
     {
         paylineAnim.SetTrigger("StopPayline");
         payline.SetActive(false);
+        popupAnim.SetActive(false);
     }
     private bool CheckWinningCondition(List<string> results)
     {

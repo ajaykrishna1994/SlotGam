@@ -344,7 +344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2398847618618576180, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: assetBundleUrl
-      value: https://firebasestorage.googleapis.com/v0/b/slot-15948.appspot.com/o/samplescene?alt=media&token=5011c2a9-9e39-44cb-b753-c47719ab6ccb
+      value: https://firebasestorage.googleapis.com/v0/b/slot-15948.appspot.com/o/samplescene?alt=media&token=fb7ed043-6aef-4730-854c-91b98311f299
       objectReference: {fileID: 0}
     - target: {fileID: 2398847618618576180, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: SceneNameToLoadAB
@@ -444,23 +444,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2398847619821482749, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2398847619821482749, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1119.49
+      value: -800.51
       objectReference: {fileID: 0}
     - target: {fileID: 2398847619821482749, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -400.26
+      value: -80.5762
       objectReference: {fileID: 0}
     - target: {fileID: 2398847619821482749, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -959.9961
+      value: 0.00390625
       objectReference: {fileID: 0}
     - target: {fileID: 2398847619821482749, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 36.07129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}

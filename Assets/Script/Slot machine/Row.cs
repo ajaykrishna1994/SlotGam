@@ -156,22 +156,7 @@ public class Row : MonoBehaviour
         float epsilon = 4.4f; //
         float[] visiblePositions = { 441f, 619f, 785 };
         // Map positions to symbols
-        Dictionary<float, string> positionToSymbolMap = new Dictionary<float, string>
-        {
-            {-85.5f, "Symbol1"},
-            {-103f, "Symbol2"},
-            {-122.56f, "Symbol3"},
-            {-142f, "Symbol4"},
-            {-161.4f, "Symbol5"},
-            {-182.5f, "Symbol6"},
-            {-204.4f, "Symbol7"},
-            {-221.2f, "Symbol8"},
-            {-245.1f, "Symbol9"},
-            {-262.8f, "Symbol10"},
-            {-283.2f, "Symbol11"},
-            {-300.5f, "Symbol12"},
-            {-321.6f, "Symbol13"}
-        };
+      
         float closestPosition = stopPositions[0];
         float minDistance = Mathf.Abs(rectTransform.anchoredPosition.y - closestPosition);
 
@@ -210,6 +195,10 @@ public class Row : MonoBehaviour
                   
 
 
+                }
+                else
+                {
+                    audioManager.Play("lowPay");
                 }
             }
         }

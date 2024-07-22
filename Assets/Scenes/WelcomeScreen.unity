@@ -344,7 +344,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2398847618618576180, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: assetBundleUrl
-      value: https://firebasestorage.googleapis.com/v0/b/slot-15948.appspot.com/o/samplescene?alt=media&token=fb7ed043-6aef-4730-854c-91b98311f299
+      value: https://firebasestorage.googleapis.com/v0/b/slot-15948.appspot.com/o/slotgame?alt=media&token=fb87f753-2637-43ee-b53c-bd2c168b4a39
       objectReference: {fileID: 0}
     - target: {fileID: 2398847618618576180, guid: d72a51c579ed9264cb00e90a6f1cefb8, type: 3}
       propertyPath: SceneNameToLoadAB

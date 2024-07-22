@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 1000764916
+CRC: 2810409047
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: samplescene
+      Name: slotgame
       Dependencies: {}

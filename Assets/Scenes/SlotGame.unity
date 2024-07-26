@@ -2418,10 +2418,6 @@ MonoBehaviour:
   - {fileID: 169255176}
   - {fileID: 1993135198}
   - {fileID: 1510171062}
-  winningSymbols:
-  - Cherry
-  - Cherry
-  - Cherry
   payline: {fileID: 1707793017}
   popupAnim: {fileID: 271979778}
 --- !u!224 &282969590 stripped
@@ -3640,7 +3636,7 @@ GameObject:
   - component: {fileID: 441795804}
   - component: {fileID: 441795805}
   m_Layer: 0
-  m_Name: sloatMechine
+  m_Name: s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3653,13 +3649,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441795803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -622.9302, y: -339.92566, z: 4.098064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1712423206}
-  m_RootOrder: 0
+  m_Father: {fileID: 1078691401}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &441795805
 MonoBehaviour:
@@ -7149,6 +7145,7 @@ Transform:
   m_Children:
   - {fileID: 345421379}
   - {fileID: 519420032}
+  - {fileID: 441795804}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10447,7 +10444,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 441795804}
   - {fileID: 1294498261}
   m_Father: {fileID: 0}
   m_RootOrder: 2

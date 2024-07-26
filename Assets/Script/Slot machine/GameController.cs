@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     private Dictionary<string, int> symbolPrizes = new Dictionary<string, int>();
     private AudioManager audioManager;
     private bool isButtonActive;
-    public string[] winningSymbols = { "WILD", "WILD", "WILD" };
+   // public string[] winningSymbols = { "WILD", "WILD", "WILD" };
     private bool spinningInProgress = false;
     [SerializeField]
     private GameObject payline;
@@ -35,15 +35,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         
-           /* if (rows.Length > 0)
-            {
-                symbolPrizes = new Dictionary<string, int>(rows[0].symbolValues);
-            }*/
             audioManager = FindAnyObjectByType<AudioManager>();
           
-       
-        // Initialize symbolPrizes from the first Row
-       
+      
      
     }
   
@@ -64,10 +58,6 @@ public class GameController : MonoBehaviour
 
     private IEnumerator SpinReels()
     {
-        // Start spinning each reel
-      
-
-        // Wait until all reels stop spinning
         bool allReelsStopped = false;
         while (!allReelsStopped)
         {
@@ -154,6 +144,7 @@ public class GameController : MonoBehaviour
                 wildCount++;
             }
         }
+        reelResults.Clear();
         if (wildCount > 2)
         {
             prize = prize + 100;
@@ -169,7 +160,7 @@ public class GameController : MonoBehaviour
            
         }
         //
-        reelResults.Clear();
+
         isrotate = false;
     }
     public void StopAnimation()
@@ -178,7 +169,7 @@ public class GameController : MonoBehaviour
         payline.SetActive(false);
         popupAnim.SetActive(false);
     }
-    private bool CheckWinningCondition(List<string> results)
+   /* private bool CheckWinningCondition(List<string> results)
     {
         // Check if the results match the predefined winning symbols
         int matchedSymbols = 0;
@@ -192,7 +183,7 @@ public class GameController : MonoBehaviour
 
         // Example condition: All symbols in the winning pattern should match
         return matchedSymbols == winningSymbols.Length;
-    }
+    }*/
     private bool IsSpecialCombination(string[] symbols)
     {
         // Example special combinations
@@ -202,18 +193,7 @@ public class GameController : MonoBehaviour
                (symbols[0] == "Bonus" && symbols[1] == "L1" && symbols[2] == "L3");
     }
 
-    public void UpdateSymbolValue(string symbol, int value)
-    {
-        if (symbolPrizes.ContainsKey(symbol))
-        {
-            symbolPrizes[symbol] = value;
-        }
-    }
-
-    void Update()
-    {
-       // HandleGameLogic();
-    }
+  
 
    
 }

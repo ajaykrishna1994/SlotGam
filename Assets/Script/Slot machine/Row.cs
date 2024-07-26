@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Events;
@@ -96,7 +96,8 @@ public class Row : MonoBehaviour
 
             // Smooth transition calculation
             float t = (float)i / randomValue; // Calculate the progress from 0 to 1
-            float smoothInterval = Mathf.Lerp(startInterval, endInterval, Mathf.SmoothStep(0, 1, t)); // Smooth transition of interval
+            float smoothInterval = Mathf.Lerp(startInterval, endInterval, Mathf.SmoothStep(0, 1, t)); // Smooth transition of interval InterpolatedValue=initialY+(targetY−initialY)×smoothValue
+            //(elapsedTime / stopDuration));
 
             yield return new WaitForSeconds(smoothInterval);
         }
@@ -105,7 +106,7 @@ public class Row : MonoBehaviour
         float[] stopPositions = { -85.5f, -103f, -122.56f, -142f, -161.4f, -182.5f, -204.4f, -221.2f, -245.1f, -262.8f, -283.2f, -300.5f, -321.6f };
         System.Array.Reverse(stopPositions);
 
-            Determine the topmost visible symbol
+        
         DetermineStoppedSloat(stopPositions);
 
         StopSpinning();
@@ -123,10 +124,11 @@ public class Row : MonoBehaviour
     private void DetermineStoppedSloat(float[] stopPositions)
     {
         symbolCounter = 0;
-        float epsilon = 4.4f; //
-        float[] visiblePositions = { 441f, 619f, 785 };
+        dummyResponse = "";
+       // float epsilon = 4.4f; //
+
         // Map positions to symbols
-      
+
         float closestPosition = stopPositions[0];
         float minDistance = Mathf.Abs(rectTransform.anchoredPosition.y - closestPosition);
 
@@ -139,7 +141,7 @@ public class Row : MonoBehaviour
                 closestPosition = position;
             }
         }
-        //1061. 783.4942 505.5148
+      
 
         rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, closestPosition);
         float topmostVisiblePosition = rectTransform.position.y;

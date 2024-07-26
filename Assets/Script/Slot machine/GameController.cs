@@ -35,10 +35,10 @@ public class GameController : MonoBehaviour
     void Start()
     {
         
-            if (rows.Length > 0)
+           /* if (rows.Length > 0)
             {
                 symbolPrizes = new Dictionary<string, int>(rows[0].symbolValues);
-            }
+            }*/
             audioManager = FindAnyObjectByType<AudioManager>();
           
        

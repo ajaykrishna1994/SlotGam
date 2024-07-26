@@ -55,13 +55,14 @@ public class Row : MonoBehaviour
         symbolList.Clear();
 
        
-        RectTransform reelRectTransform = gameObject.GetComponent<RectTransform>();
+        RectTransform reelRectTransform  = gameObject.GetComponent<RectTransform>();
 
         foreach (RectTransform child in reelRectTransform)
         {
             
             symbolList.Add(child);
         }
+       
 
        
     }
@@ -78,44 +79,13 @@ public class Row : MonoBehaviour
         audioManager.Play("Spin");
         isRowStop = false;
 
-        // Parameters for smooth downward movement
-        float initialY = rectTransform.anchoredPosition.y;
-        float targetY = -321f;
+     
         float duration = spinDuration; // Duration for smooth downward movement
-        float elapsedTime = 0f;
-
-        // Smooth downward movement
-        while (elapsedTime < duration)
-        {
-            float t = elapsedTime / duration; // Normalized time
-            float smoothPositionY = Mathf.Lerp(initialY, targetY, Mathf.SmoothStep(0f, 1f, t));
-            rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, smoothPositionY);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure the position is exactly at the bottom
-        rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, targetY);
-
-        // Abrupt jump back to the top
-        rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, -85.5f);
-
-        // Continue with the spinning logic
+      
         float startInterval = spinDuration / 30f; // Fastest animation start
         float endInterval = spinDuration / 5f; // Slowest animation end
 
-        // Determine the random number of spins
         randomValue = Random.Range(100, 140);
-        switch (randomValue % 3)
-        {
-            case 1:
-                randomValue += 2;
-                break;
-            case 2:
-                randomValue += 1;
-                break;
-        }
-
         for (int i = 0; i < randomValue; i++)
         {
             if (rectTransform.anchoredPosition.y <= -321f)
@@ -131,11 +101,11 @@ public class Row : MonoBehaviour
             yield return new WaitForSeconds(smoothInterval);
         }
 
-        // Define possible stop positions
+       
         float[] stopPositions = { -85.5f, -103f, -122.56f, -142f, -161.4f, -182.5f, -204.4f, -221.2f, -245.1f, -262.8f, -283.2f, -300.5f, -321.6f };
         System.Array.Reverse(stopPositions);
 
-        // Determine the topmost visible symbol
+            Determine the topmost visible symbol
         DetermineStoppedSloat(stopPositions);
 
         StopSpinning();
@@ -169,19 +139,18 @@ public class Row : MonoBehaviour
                 closestPosition = position;
             }
         }
-        //441 619 785
+        //1061. 783.4942 505.5148
 
         rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, closestPosition);
         float topmostVisiblePosition = rectTransform.position.y;
 
         foreach (RectTransform symbol in symbolList)
         {
-            float symbolY = symbol.position.y;
-          
-            // Check if the symbol's y position falls within any of the specified ranges
-            if ((symbolY >= 300 && symbolY <= 800) )
-               /* (symbolY >= 600 && symbolY <= 699) ||
-                (symbolY >= 700 && symbolY <= 799))*/
+            Vector3 childLocalPosition = symbol.localPosition;
+            Vector3 childWorldPosition = rectTransform.TransformPoint(childLocalPosition);
+            float childWorldPositionY = childWorldPosition.y;
+         
+            if ((childWorldPositionY >= 500 && childWorldPositionY <= 1200) )
             {
             
                 // Optional: Set the dummy response based on the symbol's name if needed
@@ -205,6 +174,7 @@ public class Row : MonoBehaviour
         isSpinning = false;
 
     }
+
     
     public string GetDummyResponse()
     {
